@@ -1,0 +1,34 @@
+version: '3.8'
+
+services:
+  # The name of the service
+
+  # statefull:
+  mongodb:
+    image: mongo
+    container_name: mongodb
+    volumes:
+      - mongData:/data/db
+
+  backend:
+    build: 
+      context: ./backend
+      dockerfile: Dockerfile
+
+  frontend:
+    build: 
+      context: ./frontend
+      dockerfile: Dockerfile
+
+  proxy:
+    build:
+      context: ./nginx
+    ports:
+      - "8080:80"
+      - "3000:3000"
+    
+  
+
+# add your volumes here
+volumes:
+  mongData:
