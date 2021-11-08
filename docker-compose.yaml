@@ -1,25 +1,30 @@
+#composing of the docker
+
+#version configuration
 version: '3.8'
-
+# The name of the service
 services:
-  # The name of the service
-
-  # statefull:
+  
+  # statefull declerations
   mongodb:
     image: mongo
     container_name: mongodb
     volumes:
       - mongData:/data/db
 
+  #backend declerations
   backend:
     build: 
       context: ./backend
       dockerfile: Dockerfile
 
+  #Frontend declerations
   frontend:
     build: 
       context: ./frontend
       dockerfile: Dockerfile
 
+  #proxy conditions for ports and content defining
   proxy:
     build:
       context: ./nginx
@@ -27,8 +32,6 @@ services:
       - "8080:80"
       - "3000:3000"
     
-  
-
-# add your volumes here
+#include the volumes used.
 volumes:
   mongData:
