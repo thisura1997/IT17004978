@@ -1,3 +1,7 @@
+//settings configuration
+//identify docker service is stopped
+
+
 {
     "DockerRun.DisableDockerrc": true
 }

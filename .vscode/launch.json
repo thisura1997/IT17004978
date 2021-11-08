@@ -1,14 +1,22 @@
+//COnfigurations been finalized for the docker
+//launch of dockers and declerations
+//Thisura
+
 {
-    "configurations": [
-        {
-            "name": "Docker Node.js Launch",
-            "type": "docker",
-            "request": "launch",
-            "preLaunchTask": "docker-run: debug",
-            "platform": "node",
-            "node": {
-                "package": "${workspaceFolder}/backend/package.json",
-                "localRoot": "${workspaceFolder}/backend"
+
+
+"configurations": [
+       {
+         "name": "Docker Node.js Launch",
+         "type": "docker",
+         "request": "launch",
+         "preLaunchTask": "docker-run: debug",
+         "platform": "node",
+         "node": {
+            //node decleration and specification
+
+            "package": "${workspaceFolder}/backend/package.json",
+            "localRoot": "${workspaceFolder}/backend"
             }
         }
     ]
